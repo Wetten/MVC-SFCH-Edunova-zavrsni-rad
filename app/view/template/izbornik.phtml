@@ -1,0 +1,24 @@
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Izbornik</div>
+</div>
+
+<div class="expanded button-group" id="responsive-menu">
+    
+    <a
+    class="button" style="background-color:  #2a2a2a" 
+    href="<?php echo App::config("url") ?>">POČETNA</a>
+
+    <a class="button" style="background-color:  #2a2a2a"href="<?php echo App::config("url") ?>proizvod/index">KAVA</a>
+
+    <a class="button" style="background-color:  #2a2a2a" href="<?php echo App::config("url") ?>post/index">NOVOSTI</a>
+
+    <a class="button" style="background-color:  #2a2a2a" href="<?php echo App::config("url") ?>index/kontakt">KONTAKT</a>
+
+    <?php if(isset($_SESSION["autoriziran"])): ?>
+    <a class="button" style="background-color:  #0000ff" href="<?php echo App::config("url") ?>osoba/index">EDITORI</a>
+    <?php endif ?>
+    
+</div>
+
+

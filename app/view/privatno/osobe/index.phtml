@@ -1,0 +1,40 @@
+<a href="<?php echo App::config("url") ?>osoba/pripremaNovi" 
+class=" button expanded" style="background-color:  #0000ff">
+<i class="fas fa-plus-square"></i>
+Dodaj novog editora</a>
+
+<div class="grid-container">
+
+    <div class="grid-x" >
+        <?php foreach($osobe as $osoba): ?>
+            <div class="large-3 medium-6 small-12 column" style="background-color: #2a2a2a">
+                <ul class="pricing-table" >
+                    <li class="title" style="background-color: #2a2a2a"><?php echo $osoba->korisnicko_ime ?></li>
+                    <li class="price"><?php echo $osoba->ime ?></li>
+                    <li class="price"><?php echo $osoba->prezime ?></li>
+                    <li class="price"><?php echo $osoba->email ?></li>
+                    <li class="price"><?php echo $osoba->lozinka ?></li>
+                    <li class="price"><?php echo $osoba->datum_izrade_racuna ?></li>
+                    <li class="price"><?php echo $osoba->uloga ?></li>
+                    <li>
+                    <img src="<?php echo App::config("url") ?>public/img/nepoznataOsoba.png">
+                        
+                        <hr>
+
+                        <a title="Promjeni <?php echo $osoba->korisnicko_ime ?>" 
+                        href="<?php 
+                        echo App::config("url") 
+                        ?>osoba/pripremaPromjeni/<?php echo $osoba->id ?>">
+                        <i class="fas fa-edit fa-2x" style="color: orange"></i>
+                        </a>
+                    
+                        <a title="Obriši <?php echo $osoba->korisnicko_ime ?>" 
+                            onclick="return confirm('Sigurno obrisati <?php echo $osoba->korisnicko_ime ?>');"
+                            href="<?php echo App::config("url") ?>
+                            osoba/brisi/<?php echo $osoba->id ?>">
+                            <i class="fas fa-trash fa-2x" style="color: red"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    <?php endforeach;?>

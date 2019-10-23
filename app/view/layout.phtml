@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <?php include_once "template/head.phtml" ?>
+  </head>
+  <body>
+
+    <div>
+
+      <ul class="menu">
+        
+        <?php if(isset($_SESSION["autoriziran"])): ?>
+          <a class="button small secondary float-left" href="<?php echo App::config("url") ?>index/logout">Odjava
+          <?php echo $_SESSION["autoriziran"]->imePrezime;?></a>
+        <?php else:?>
+        <a class="button small secondary"href="<?php echo App::config("url") ?>index/login">Prijava</a>
+
+      <?php endif;?>
+      <a class="button small alert float-right" href="/index/era">ERA</a>
+      </ul>
+    </div>
+
+    <div>
+      <a href="<?php echo App::config("url") ?>">
+        <img src="/public/img/sfch logo.png" alt="SFCH Logo" 
+        class="center" style="height:18rem; width:25rem;">
+      </a>
+    </div>
+
+    <div class="colorstrip"></div>
+
+    <div class="grid-container" >
+        <?php include_once "template/izbornik.phtml" ?>
+        <div id="program" class="callout large">
+            <?php echo $content; ?>
+        </div>
+        <?php include_once "template/podnozje.phtml" ?>
+    </div>
+
+    <?php include_once "template/skripte.phtml" ?>
+  </body>
+</html>

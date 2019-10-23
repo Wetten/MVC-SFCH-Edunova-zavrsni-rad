@@ -1,0 +1,25 @@
+<fieldset class="fieldset">
+    <legend>Popunite tražene podatke</legend>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'korisnicko_ime','Korisničko Ime');?>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'ime','Ime');?>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'prezime','Prezime');?>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'email','Email');?>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'lozinka','Nova Lozinka');?>
+
+    <?php echo Utility::inputText(
+    isset($greska) ? $greska : null,'datum_izrade_racuna','Datum izrade računa');?>
+
+    <?php echo Utility::inputText(
+        isset($greska) ? $greska : null,'uloga','Uloga');?>
+</fieldset>
+<hr />

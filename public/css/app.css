@@ -1,0 +1,91 @@
+ol#smjerovi{
+    list-style-type: upper-roman;
+}
+
+table#tablicaSmjerovi > tbody > tr > td:nth-child(2),
+table#tablicaSmjerovi > tbody > tr > td:nth-child(3),
+table#tablicaSmjerovi > tbody > tr > td:nth-child(4),
+table#tablicaSmjerovi > tfoot > tr > td:nth-child(1),
+table#tablicaSmjerovi > tfoot > tr > td:nth-child(2),
+table#tablicaSmjerovi > tfoot > tr > td:nth-child(3)
+{
+    text-align: right;
+}
+table#tablicaSmjerovi > tbody > tr > td:nth-child(5)
+{
+    text-align: center;
+}
+
+table#tablicaSmjerovi > thead > tr > th{
+    text-align: center;
+}
+
+
+/* Prikaz predavača i polaznika */
+
+
+.pricing-table {
+    background-color: #fefefe;
+    border: solid 1px #cacaca;
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+  }
+  
+  .pricing-table li {
+    border-bottom: dotted 1px #cacaca;
+    padding: 0.875rem 1.125rem;
+  }
+  
+  .pricing-table li:last-child {
+    border-bottom: 0;
+  }
+  
+  .pricing-table .title {
+    background-color: #0a0a0a;
+    color: #fefefe;
+    border-bottom: 0;
+  }
+  
+  .pricing-table .price {
+    background-color: #e6e6e6;
+    font-weight: bold;
+    border-bottom: 0;
+  }
+  
+  .pricing-table .description {
+    color: #8a8a8a;
+    font-size: 80%;
+  }
+  .pricing-table .email {
+    font-size: 0.7rem;
+  }
+  
+  .pricing-table :last-child {
+    margin-bottom: 0;
+  }
+  
+  ul.pricing-table{
+    margin-left: 0px;
+  }
+
+/* Završio prikaz predavača i polaznika*/
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.colorstrip{
+    width: 100%; height: 3rem;
+    border-style: transparent;
+    border-color: black;
+    background-color: #CA2B45;
+}
+
+#program{
+  min-height: 40rem;
+  background-color: white;
+}

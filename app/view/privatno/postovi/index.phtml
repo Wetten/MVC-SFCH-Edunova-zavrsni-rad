@@ -1,0 +1,43 @@
+<?php if(isset($_SESSION["autoriziran"])): ?>
+<a href="<?php echo App::config("url") ?>post/pripremaNovi" 
+class=" button expanded" style="background-color:  #0000ff">
+<i class="fas fa-plus-square"></i>
+Dodaj novu objavu!</a>
+<?php endif ?>
+
+<div class="grid-container">
+
+    <div class="grid-x" >
+        <?php foreach($postovi as $post): ?>
+            <div class="large-3 medium-6 small-12 column" style="background-color: #2a2a2a">
+                <ul class="pricing-table" >
+                    <li class="title" style="background-color: #2a2a2a"><?php echo $post->naslov ?></li>
+                    <li class="price"><?php echo $post->sadrzaj ?></li>
+                    <li class="price"><?php echo $post->datum_objave ?></li>
+                    <?php if(isset($_SESSION["autoriziran"])): ?>
+                    <li class="price" style="color: #9bc2cf"><?php echo $post->osoba ?></li>
+                    <?php endif ?>
+                    <li>
+                    <img src="<?php echo App::config("url") ?>public/img/nepoznataNovost.png">
+                        
+                        <hr>
+
+                        <?php if(isset($_SESSION["autoriziran"])): ?>
+                            <a title="Promjeni <?php echo $post->naslov ?>" 
+                            href="<?php 
+                            echo App::config("url") 
+                            ?>post/pripremaPromjeni/<?php echo $post->id ?>">
+                            <i class="fas fa-edit fa-2x" style="color: orange"></i>
+                        </a>
+                        
+                            <a title="Obriši <?php echo $post->naslov ?>" 
+                                onclick="return confirm('Sigurno obrisati <?php echo $post->naslov ?>');"
+                                href="<?php echo App::config("url") 
+                                ?>post/brisanje/<?php echo $post->id ?>">
+                                <i class="fas fa-trash fa-2x" style="color: red"></i>
+                            </a>
+                        <?php endif ?>
+                    </li>
+                </ul>
+            </div>
+    <?php endforeach;?>

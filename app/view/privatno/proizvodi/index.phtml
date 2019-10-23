@@ -1,0 +1,43 @@
+<?php if(isset($_SESSION["autoriziran"])): ?>
+<a href="<?php echo App::config("url") ?>proizvod/pripremaNovi" 
+class=" button expanded" style="background-color:  #0000ff">
+<i class="fas fa-plus-square"></i>
+Dodaj novi proizvod</a>
+<?php endif ?>
+
+<div class="grid-container">
+
+    <div class="grid-x" >
+        <?php foreach($proizvodi as $proizvod): ?>
+            <div class="large-3 medium-6 small-12 column" style="background-color: #2a2a2a">
+                <ul class="pricing-table" >
+                    <li class="title" style="background-color: #2a2a2a"><?php echo $proizvod->naziv ?></li>
+                    <li class="price"><?php echo $proizvod->kolicina ?></li>
+                    <li class="price"><?php echo $proizvod->opis ?></li>
+                    <?php if(isset($_SESSION["autoriziran"])): ?>
+                    <li class="price" style="color: #9bc2cf"><?php echo $proizvod->osoba ?></li>
+                    <?php endif ?>
+                    <li>
+                    <img src="<?php echo App::config("url") ?>public/img/nepoznatiProizvod.jpg">
+                        
+                        <hr>
+
+                        <?php if(isset($_SESSION["autoriziran"])): ?>
+                            <a title="Promjeni <?php echo $proizvod->naziv ?>" 
+                            href="<?php 
+                            echo App::config("url") 
+                            ?>proizvod/pripremaPromjeni/<?php echo $proizvod->id ?>">
+                            <i class="fas fa-edit fa-2x" style="color: orange"></i>
+                        </a>
+                        
+                            <a title="Obriši <?php echo $proizvod->naziv ?>" 
+                                onclick="return confirm('Sigurno obrisati <?php echo $proizvod->naziv?>');"
+                                href="<?php echo App::config("url") 
+                                ?>proizvod/brisanje/<?php echo $proizvod->id ?>">
+                                <i class="fas fa-trash fa-2x" style="color: red"></i>
+                            </a>
+                        <?php endif ?>
+                    </li>
+                </ul>
+            </div>
+    <?php endforeach;?>
