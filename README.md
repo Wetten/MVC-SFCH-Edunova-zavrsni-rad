@@ -1,2 +1,2 @@
 # MVC SFCH Edunova zavrsni rad
- Final product for the verification and certification process.
+ PHP Web Application for the PHP course in Edunova.
